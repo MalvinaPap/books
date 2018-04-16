@@ -43,6 +43,7 @@ import pl.droidevs.books.Resource;
 import pl.droidevs.books.domain.Book;
 import pl.droidevs.books.removebook.RemoveBookViewModel;
 import pl.droidevs.books.savebook.SaveBookActivity;
+import pl.droidevs.books.searchbook.AdvancedSearchActivity;
 import pl.droidevs.books.ui.SwipeCallback;
 
 import static android.view.View.GONE;
@@ -266,9 +267,10 @@ public class LibraryActivity extends AppCompatActivity {
     }
 
     private void searchOptionSelected() {
-
-        }
+        Intent gotoAdSearch = new Intent(LibraryActivity.this, AdvancedSearchActivity.class);
+        LibraryActivity.this.startActivity(gotoAdSearch);
     }
+
 
     private void exportOptionSelected() {
         if (hasWriteStoragePermission()) {
