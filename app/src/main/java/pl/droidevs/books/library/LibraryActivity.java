@@ -257,8 +257,17 @@ public class LibraryActivity extends AppCompatActivity {
 
             return true;
         }
+        if (item.getItemId() == R.id.advanced_search_item) {
+            searchOptionSelected();
 
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void searchOptionSelected() {
+
+        }
     }
 
     private void exportOptionSelected() {
