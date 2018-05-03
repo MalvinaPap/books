@@ -88,7 +88,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
     private AdvancedSearchViewModel advancedSearchViewModel;
 
 
-
+    /**methods called when activity is launched**/
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,6 +102,7 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         setupSpinner();
         setupViewModel();
     }
+
 
     private void setupSpinner() {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getCategoryNames());
@@ -120,24 +121,34 @@ public class AdvancedSearchActivity extends AppCompatActivity {
         return categoryNames;
     }
 
+
     private void setupViewModel() {
         final AdvancedSearchViewModel viewModel = ViewModelProviders
                 .of(this, viewModelFactory)
                 .get(AdvancedSearchViewModel.class);
     }
 
+    void setDataToViewModel() {
+        advancedSearchViewModel.setAuthor(authorEditText.getText().toString());
+        advancedSearchViewModel.setYear(yearEditText.getText().toString());
+        advancedSearchViewModel.setPublisher(publisherEditText.getText().toString());
+        advancedSearchViewModel.setRating(ratingBar.getRating());
+        advancedSearchViewModel.setCategory(categorySpinner.getSelectedItem().toString());
+    }
+
+    /**end of launching methods**/
+
 
 
     @OnClick(R.id.searchButton)
     void onSearchButtonClicked() {
 
-
+        setDataToViewModel();
+        advancedSearchViewModel.searchBooks();
     }
 
-    public static void startForResult(@NonNull final Activity context, @NonNull final BookId bookId) {
-        Intent intent = new Intent(context, AdvancedSearchActivity.class);
 
-    }
+
 
 
 }

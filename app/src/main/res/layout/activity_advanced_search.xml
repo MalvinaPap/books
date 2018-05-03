@@ -120,11 +120,11 @@
         <TextView
             android:id="@+id/rating_tv"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:layout_marginTop="@dimen/spacing_normal"
             android:background="@android:color/transparent"
-            android:textSize="19sp"
             android:text="@string/rating"
+            android:textSize="19sp"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/categorySpinner" />
@@ -132,10 +132,10 @@
         <RatingBar
             android:id="@+id/ratingBar"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="63dp"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/rating_tv"/>
+            app:layout_constraintTop_toBottomOf="@+id/rating_tv" />
 
         <Button
             android:id="@+id/searchButton"

@@ -49,8 +49,8 @@
     <!--Searching book-->
     <string name="search_hint">Search books</string>
     <string name="search_action">Search</string>
-    <string name="advanced_search">Fill at least one field: </string>
-    <string name="rating">With rating</string>
+    <string name="advanced_search">Search books with: </string>
+    <string name="rating">Rating</string>
     <string name="search_no_result">There are no books\nmatching your criteria.</string>
 
 
