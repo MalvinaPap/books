@@ -22,6 +22,9 @@ public interface BookDao {
     @Query("SELECT * FROM " + TABLE_NAME + " WHERE id = :bookId")
     Maybe<BookEntity> getBookById(long bookId);
 
+    @Query("SELECT * FROM " + TABLE_NAME + " WHERE category = :category")
+    Flowable<List<BookEntity>> getBooksByCategory(final String category);
+
     @Query("SELECT * FROM " + TABLE_NAME + " WHERE title LIKE '%' || :title || '%' OR author LIKE '%' || :author || '%'")
     Flowable<List<BookEntity>> getByTitleOrAuthor(final String title, final String author);
 
