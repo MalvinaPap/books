@@ -2,6 +2,7 @@ package pl.droidevs.books.dao;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+import java.util.Date;
 
 import static pl.droidevs.books.dao.BookEntity.TABLE_NAME;
 
@@ -19,6 +20,7 @@ public class BookEntity {
     private String category;
     private String imageUrl;
     private float rating;
+    private String saveDate;
 
 
     public long getId() {
@@ -89,5 +91,14 @@ public class BookEntity {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getSaveDate() {
+        return saveDate;
+    }
+
+    public void setSaveDate() {
+        Date date = new Date();
+        saveDate = date.toString();
     }
 }

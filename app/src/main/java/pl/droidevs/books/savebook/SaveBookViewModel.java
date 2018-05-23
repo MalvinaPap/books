@@ -24,6 +24,7 @@ public final class SaveBookViewModel extends RxViewModel {
     private float rating;
     private String description;
     private String category;
+    private String saveDate;
 
     private final BookRepository bookRepository;
 
@@ -83,6 +84,10 @@ public final class SaveBookViewModel extends RxViewModel {
         this.category = category;
     }
 
+    public void setsaveDate(String saveDate) {
+        this.saveDate = saveDate;
+    }
+
     boolean isDataValid() {
         return BookInputValidator.isAuthorValid(author) &&
                 BookInputValidator.isTitleValid(title) &&
@@ -108,6 +113,7 @@ public final class SaveBookViewModel extends RxViewModel {
         book.setYear(this.year);
         book.setPublisher(this.publisher);
         book.setRating(this.rating);
+        book.setSaveDate(this.saveDate);
 
 
         return book;

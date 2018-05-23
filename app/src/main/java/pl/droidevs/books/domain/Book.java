@@ -13,6 +13,7 @@ public final class Book {
     private float rating;
     private String description;
     private String imageUrl;
+    private String saveDate;
 
     public Book(@NonNull String title, @NonNull String author, @NonNull Category category) {
         this(null, title, author, category);
@@ -90,6 +91,15 @@ public final class Book {
 
     public void setImageUrl(@Nullable String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    @NonNull
+    public String getSaveDate() {
+        return saveDate;
+    }
+
+    public void setSaveDate(String saveDate) {
+        this.saveDate = saveDate;
     }
 
     public enum Category {
