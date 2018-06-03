@@ -62,7 +62,8 @@ public class BookMapper {
         entity.setYear(book.getYear());
         entity.setPublisher(book.getPublisher());
         entity.setRating(book.getRating());
-        entity.setSaveDate(book.getSaveDate());
+        entity.setSaveDate();
+
 
         if (book.getId() != null) {
             entity.setId(getBookEntityIdFromBookId(book.getId()));

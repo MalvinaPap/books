@@ -9,6 +9,7 @@ import java.util.List;
 
 import io.reactivex.Flowable;
 import io.reactivex.Maybe;
+import pl.droidevs.books.domain.Book;
 
 import static android.arch.persistence.room.OnConflictStrategy.REPLACE;
 import static pl.droidevs.books.dao.BookEntity.TABLE_NAME;
@@ -18,6 +19,9 @@ public interface BookDao {
 
     @Query("SELECT * FROM " + TABLE_NAME)
     Flowable<List<BookEntity>> getAllBooks();
+
+    @Query("SELECT * FROM " + TABLE_NAME)
+    List<Book> getAllBooksListed();
 
     @Query("SELECT * FROM " + TABLE_NAME + " WHERE id = :bookId")
     Maybe<BookEntity> getBookById(long bookId);
